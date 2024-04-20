@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Set Details</title>
+</head>
+<body>
+    <%- include('partials/navbar', {page: ""}) %>
+
+    <div class="container mx-auto">
+        <div class="hero">
+            <div class="hero-content text-center">
+                <div class="max-w-md mx-auto">
+                    <h1 class="text-4xl md:text-5xl font-bold"><%= set.name %></h1>
+                    <p class="py-6">Check out this info for <%= set.name %></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-center">
+            <div class="card card-side bg-base-100">
+                <figure class="w-1/2 max-w-xs">
+                    <img src="<%= set.img_url %>" alt="<%= set.name %>" class="object-cover h-auto w-full">
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title text-2xl font-bold"><%= set.name %></h2>
+                    <p><strong>Name:</strong> <%= set.name %></p>
+                    <p><strong>Year:</strong> <%= set.year %></p>
+                    <p><strong>Theme:</strong> <%= set.Theme.name %></p>
+                    <p><strong>Number of Parts:</strong> <%= set.num_parts %></p>
+                    <div id="quote" class="mt-4"></div>
+                    <div class="card-actions justify-end mt-4">
+                        <a href="/lego/editSet/<%= set.set_num %>" class="btn btn-success">Edit</a>
+                        <button onclick="history.back();" class="btn btn-primary">Go Back</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", ()=>{
+        fetch('https://quotable.io/random')
+            .then(response => response.json())
+            .then(data => {
+                const quoteElement = document.getElementById('quote');
+                quoteElement.innerHTML = `<p>${data.content}</p><p>- ${data.author}</p>`;
+            });
+    });
+    </script>
+</body>
+</html>

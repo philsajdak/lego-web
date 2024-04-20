@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Lego Collection</title>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+
+    <div class="container mx-auto">
+        <div class="hero">
+            <div class="hero-content text-center">
+                <div class="max-w-md mx-auto">
+                    <h1 class="text-4xl md:text-5xl font-bold">Explore Lego</h1>
+                    <p class="py-6">Discover all the cool Lego sets that have been released!</p>
+                    <a href="/lego/sets" class="btn btn-neutral">Browse Sets</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4 md:p-8">
+            <div class="card card-compact w-96 bg-base-100 shadow-xl">
+                <figure><img src="https://cdn.rebrickable.com/media/sets/30655-1.jpg" alt="Forklift with Pallet"></figure>
+                <div class="card-body">
+                    <h2 class="card-title">Forklift with Pallet</h2>
+                    <p>Available to redeem for 500 VIP points in the rewards centre from the 1st April following the Land Rover Classic Defender 90 release.</p>
+                    <div class="card-actions justify-end">
+                        <a href="/lego/sets/30655-1" class="btn btn-accent">View</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-compact w-96 bg-base-100 shadow-xl">
+                <figure><img src="https://cdn.rebrickable.com/media/sets/3068-1.jpg" alt="Shoes"></figure>
+                <div class="card-body">
+                    <h2 class="card-title">Radar Buggy</h2>
+                    <p>Kabaya promotional set. Non-promotional versions were released as sets 1180-1 and 1265-1.</p>
+                    <div class="card-actions justify-end">
+                        <a href="/lego/sets/3068-1" class="btn btn-accent">View</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-compact w-96 bg-base-100 shadow-xl">
+                <figure><img src="https://cdn.rebrickable.com/media/sets/3070-1.jpg" alt="Mosquito"></figure>
+                <div class="card-body">
+                    <h2 class="card-title">Mosquito</h2>
+                    <p>Released in 1999, comes in 21 parts.</p>
+                    <div class="card-actions justify-end">
+                        <a href="/lego/sets/3070-1" class="btn btn-accent">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
